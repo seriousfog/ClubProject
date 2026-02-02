@@ -11,17 +11,12 @@ const db = {};
 
 var express = require('express');
 var router = express.Router();
-const clubController = require('../controllers/clubController');
-router.get('/', clubController.displayclubInfos);
+const clubController = require('../controllers/clubController.js');
+
+router.get('/home', clubController.homeRoute);
+
 module.exports = router;
 
-router.get('/', async function(req, res, next) {
-  const {sequelize} = require("../models/index");
-  const {QueryTypes} = require("sequelize");
-
-  let clubInfo = await sequelize.query('SELECT * FROM clubinfos', {type: QueryTypes.SELECT});
-  res.render('index', {clubInfo});
-});
 
 let sequelize;
 if (config.use_env_variable) {
