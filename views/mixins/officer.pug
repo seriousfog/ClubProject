@@ -1,0 +1,19 @@
+
+div.clubofficer-content1
+    div.officersimage1
+        label(for="off_image") Insert Officer Image
+        input(type="file" name="off_image" id="off_image" accept="image/" required=true)
+    p.otitle1
+        label(for="off_first_name")
+        input(type="text" name="off_first_name" id="off_first_name" placeholder="Officer First Name" required=true)
+        label(for="off_last_name")
+        input(type="text" name="off_last_name" id="off_last_name" placeholder="Officer Last Name" required=true)
+        | -
+        label(for="officer_position")
+        select(name="officer_position" id="officer_position" required=true)
+            option(value="")
+            option(value="president") President
+            option(value="vice_president") Vice President
+            option(value="secretary") Secretary
+            option(value="treasurer") Treasurer
+            option(value="historian") Historian

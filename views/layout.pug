@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript' src='/javascripts/calendar.js')
+    script(type='text/javascript' src='/javascripts/clubNews.js')
+    script(type='text/javascript' src='/javascripts/officer.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body
+      header.main-header
+          div.logo
+              a(href="https://edison.fresnounified.org/" target="_blank")
+                  img(src="/images/Edison-Tigers-Logo.png", alt="Logo")
+          nav.main-nav
+              a(href="/") Home
+              div.club-create
+                  a(href="/club1") Cinema Club
+              div.club-register
+                  a(href="/registeruser") Register as User
+              div.club-register
+                  a(href="/registerofficer") Register as Officer
+              div.club-create
+                  a(href="/clubcreate") Add Club
+              div.club-create
+                  a(href="/test") Test
+
+
+      div.content
+          block content
+
