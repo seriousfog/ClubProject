@@ -51,7 +51,6 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 
-const express = require('express');
 const {Pool} = require("pg");
 const app = express();
 const dotenv = require ('dotenv').config();

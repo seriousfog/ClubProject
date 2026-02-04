@@ -7,6 +7,10 @@ block content
             th Advisor First
             th Advisor Last
         tbody
-    each clubinfo in clubinfos
-        tr
-            td= clubinfo.clubname
+            if clubinfos.length
+                each clubinfo in clubinfos
+                    tr
+                        td= clubinfo.clubname
+            else
+                tr
+                    td(colspan="3") No clubs found

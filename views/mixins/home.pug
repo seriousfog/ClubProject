@@ -1,1 +1,12 @@
 extends ../layout
+
+block content
+    table
+        thead
+            th Club Name
+            th Advisor First
+            th Advisor Last
+        tbody
+    each clubinfo in clubinfos
+        tr
+            td= clubinfo.clubname
