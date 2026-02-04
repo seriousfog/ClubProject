@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const userController = require('../controllers/userController');
+const clubController = require('../controllers/clubController');
 
 /* GET home page. */
+
 router.get('/', function(req, res) {
   res.render('index');
 });
@@ -18,7 +19,6 @@ router.get('/registeruser', function(req, res) {
 router.get('/registerofficer', function(req, res) {
     res.render('users/registerOfficer');
 })
-
 
 router.get('/club1', function(req, res) {
     res.render('clubs/club');
@@ -36,6 +36,8 @@ router.get('/clubcreate', function(req, res) {
 router.get('/test', function(req, res) {
     res.render('mixins/test');
 })
+
+
 
 /*
 router.get('/registerUser', userController.renderUserRegistration);
