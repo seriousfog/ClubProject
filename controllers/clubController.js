@@ -1,6 +1,6 @@
-const {sequelize} = require("../routes/index");
+const {sequelize} = require("../models/index");
 const {QueryTypes} = require('sequelize');
-const {clubInfo} = require("../routes/index");
+const {clubInfo} = require("../models/index");
 
 module.exports.homeRoute = async function(req, res,next) {
     let clubInfos = await clubInfo.findAll();
