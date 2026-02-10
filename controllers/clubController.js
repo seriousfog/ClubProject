@@ -6,4 +6,3 @@ module.exports.homeRoute = async function(req, res,next) {
     let clubInfos = await clubInfo.findAll();
     res.render('test', {clubInfos});
 }
-
