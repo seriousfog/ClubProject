@@ -1,19 +1,22 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Pool } = require('dotenv').config();
+
 module.exports = (sequelize, DataTypes) => {
-  class clubInfo extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+  class Club extends Model {
     static associate(models) {
-      // define association here
+      Club.hasMany(models.Officer, {
+        foreignKey: 'clubin',
+        sourceKey: 'clubname'
+      });
     }
   }
-  clubInfo.init({
+
+  Club.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     clubname: DataTypes.STRING,
     advisorfirstname: DataTypes.STRING,
     advisorlastname: DataTypes.STRING,
@@ -21,14 +24,15 @@ module.exports = (sequelize, DataTypes) => {
     clubroomnumber: DataTypes.STRING,
     category: DataTypes.STRING,
     clublogo: DataTypes.STRING,
-    smalldescription: DataTypes.STRING,
+    smalldescription: DataTypes.TEXT,
     secondadvisorfirstname: DataTypes.STRING,
     secondadvisorlastname: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'clubInfo',
-    timestamps: false,
-    tableName: 'clubinfo'
+    modelName: 'Club',
+    tableName: 'clubinfo',
+    timestamps: false
   });
-  return clubInfo;
+
+  return Club;
 };
