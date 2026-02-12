@@ -1,6 +1,9 @@
 'use strict';
 const { Pool } = require('dotenv').config();
 
+class Model {
+}
+
 module.exports = (sequelize, DataTypes) => {
   class Club extends Model {
     static associate(models) {
